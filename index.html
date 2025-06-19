@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manohar Tyre Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: #222;
+  padding: 1rem 0;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  float: left;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  float: right;
+}
+
+.navbar .nav-links li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #ff5722;
+}
+
+/* Clear floats */
+.navbar::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #ff5722;
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e64a19;
+}
+
+.services {
+  padding: 60px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: #ff5722;
+}
+
+.timetable {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.timetable h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+thead tr {
+  background-color: #ff5722;
+  color: white;
+  font-weight: 700;
+}
+
+th, td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #fceae6;
+}
+
+.about {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+.contact-info {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .navbar .nav-links li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+
+    </style>
+
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">Manohar Tyre Shop</h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#timetable">Time Table</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <h2>Welcome to Manohar Tyre Shop</h2>
+      <p>Your one-stop solution for all tyre pressure and maintenance needs.</p>
+      <a href="#services" class="btn-primary">Explore Services</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Tyre Pressure Check</h3>
+          <p>Ensure your safety with our accurate and quick tyre pressure checks.</p>
+        </div>
+        <div class="card">
+          <h3>Nitrogen Gas Filling</h3>
+          <p>Extend tyre life and improve mileage with professional nitrogen filling.</p>
+        </div>
+        <div class="card">
+          <h3>Wheel Alignment</h3>
+          <p>Get smooth rides with precise wheel alignment services by experts.</p>
+        </div>
+        <div class="card">
+          <h3>Tyre Repair & Replacement</h3>
+          <p>Quality repairs and reliable replacement options for all tyre types.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timetable" id="timetable">
+    <div class="container">
+      <h2>Working Hours</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Tuesday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Wednesday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Thursday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Friday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Saturday</td><td>7:00 AM</td><td>9:00 PM</td></tr>
+          <tr><td>Sunday</td><td>7:00 AM</td><td>9:00 AM</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Manohar Tyre Shop has been the trusted name in tyre maintenance for over a decade. Our dedicated team offers professional services with the latest equipment to ensure your vehicle’s safety on the road.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91 8882020837</p>
+        <p><strong>Email:</strong> moujor1996@gmail.com</p>
+        <p><strong>Address:</strong> Noida Sector 63 near VPS School</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.6318680200577!2d77.33132901502094!3d28.599184582457615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce54eb572d9a9%3A0x74af3b07f41ff1d6!2sVPS%20School%20Noida%20Sector%2063!5e0!3m2!1sen!2sin!4v1687234567890!5m2!1sen!2sin"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Manohar Tyre Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Thank you for contacting Manohar Tyre Shop. We will respond soon.");
+  this.reset();
+});
+
+
+</script>
+
+</body>
+</html>
